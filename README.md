@@ -5,7 +5,7 @@ Working on porting an asteroid game from C# to C++
 
 Authors 
 
-Aleksander Petrovic - Project Director
+Aleksandar Petrovic - Project Director
 
 Thomas Anderson - Project Producer
 
