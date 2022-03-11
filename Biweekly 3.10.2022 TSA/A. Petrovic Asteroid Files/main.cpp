@@ -51,6 +51,8 @@ int main() {
     sf::Texture rocketTexture;
     sf::Sprite rocket;
 
+    //After getting the SFML library to work on my mac, I needed to provide complete path
+    //of the png file in order for the image to work. 
     rocketTexture.loadFromFile("/Users/aleks/Documents/Xcode Files/MyFirstSFMLApp/MyFirstSFMLApp/rocket.png");
     rocket.setTexture(rocketTexture);
     rocket.setScale(0.2f, 0.2f);
@@ -66,6 +68,7 @@ int main() {
     int dx;
     int dy;
     
+    //Started working on the bullets for the game
     //Bullets
     sf::RectangleShape bullets;
     bullets.setSize(sf::Vector2f(5, 20));
@@ -80,7 +83,7 @@ int main() {
     Bullet b1;
     b1.bulletShape.setPosition(rocketPosition.x, rocketPosition.y);
     b1.bulletShape.setOutlineThickness(5);
-
+    //Added flag for space bar (03-10-2022)
     //Flags for key pressed
     bool upFlag = false;
     bool downFlag = false;
@@ -93,7 +96,7 @@ int main() {
             if (event.type == sf::Event::Closed) {
                 window.close();
             }
-
+            //Added an event for the space bar to shoot bullets (03/10/2022)
             //If a key is pressed
             if (event.type == sf::Event::KeyPressed) {
                 switch (event.key.code) {
@@ -109,7 +112,7 @@ int main() {
                 default: break;
                 }
             }
-
+            
             //If a key is released
             if (event.type == sf::Event::KeyReleased) {
                 switch (event.key.code) {
@@ -125,7 +128,14 @@ int main() {
         }
 
         // Update coordinates
-
+        
+        //*********UPDATE 03-10-2022****************************************
+        //Added new controls for movement that make the spaceship float around
+        //the screen. New things for thrust were added and changes to how the
+        //spaceship moved were also implemented. An attempt to start implementing
+        //bullets was also added, however it is incomplete. 
+        //*********UPDATE 03-10-2022****************************************
+        //-------------------------------------------------------------------
         //*********UPDATE 02-24-2022****************************************
         //This little bit is needed to make sure the up arrows make the rocket
         //go forward no matter what direction the rocket is facing
